@@ -1,34 +1,20 @@
 import styles from "../style";
 import LetsConnect from "./LetsConnect";
-import Lottie from "react-lottie-player";
-import animationData from "../lotties/person-coding.json";
 import { aboutMe } from "../constants";
-
-
-// lottie config
-const defaultOptions = {
-  loop: true,
-  play: true,
-  animationData: animationData,
-  rendererSettings: {
-    preserveAspectRatio: "xMidYMid slice",
-  },
-};
+import { said } from "../assets"; // ton image
 
 const Hero = () => {
   return (
     <section
       id="home"
-      className={`flex md:flex-row flex-col ${styles.paddingY}`}
+      className={`flex md:flex-row flex-col ${styles.paddingY} items-center justify-center`}
     >
-      <div
-        className={`flex-1 ${styles.flexStart} flex-col xl:px-0 sm:px-16 px-6`}
-      >
-        {/* Hero text */}
+      {/* Partie gauche (Texte) */}
+      <div className={`flex-1 ${styles.flexStart} flex-col xl:px-0 sm:px-16 px-6`}>
         <div className="flex flex-row justify-between items-center w-full text-white">
-          <h1 className="flex-1 font-poppins font-semibold ss:text-[72px] text-[52px] text-white ss:leading-[80px] leading-[80px]">
+          <h1 className="flex-1 font-poppins font-semibold ss:text-[72px] text-[52px] ss:leading-[80px] leading-[80px]">
             Hi, there!
-            <br className="sm:block hidden" /> 
+            <br className="sm:block hidden" />
           </h1>
 
           <div className="ss:flex hidden md:mr-4 mr-0">
@@ -39,22 +25,25 @@ const Hero = () => {
         <h1 className="font-poppins font-semibold ss:text-[68px] text-[52px] text-white ss:leading-[80px] leading-[80px] w-full">
           <span className="text-gradient">{aboutMe.name}</span>
         </h1>
+
         <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
           {aboutMe.intro}
         </p>
-      </div>
 
-      <div
-        className={`flex-1 flex ${styles.flexCenter} md:my-0 my-10 relative`}
-      >
-        <div className="relative z-index-[5] h-[90%] w-[85%]">
-          <Lottie {...defaultOptions} />
+        {/* Bouton LetsConnect visible sur mobile */}
+        <div className={`ss:hidden ${styles.flexCenter} mt-6`}>
+          <LetsConnect />
         </div>
-        <div className="absolute z-[1] w-[50%] h-[50%] rounded-full bottom-40 white__gradient"></div>
       </div>
 
-      <div className={`ss:hidden ${styles.flexCenter}`}>
-        <LetsConnect />
+      {/* Partie droite (Image) */}
+      <div className={`flex-1 flex ${styles.flexCenter} md:my-0 my-10 relative`}>
+        <img
+          src={said}
+          alt="TALLOUK SAID"
+          className="w-[400px] h-[400px] border-4 border-teal-500 rounded-full object-cover shadow-xl transition-transform duration-300 hover:scale-105"
+        />
+        <div className="absolute z-[1] w-[50%] h-[50%] rounded-full bottom-40 white__gradient"></div>
       </div>
     </section>
   );
