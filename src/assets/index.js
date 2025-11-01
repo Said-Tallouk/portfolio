@@ -1,4 +1,4 @@
-import Vehicule from "./Vehicule.png";
+import vehicule from "./vehicule.png";
 import lab from "./lab.png";
 import sentiment from "./sentiment.png";
 import cv from "./cv.png";
@@ -26,7 +26,7 @@ export {
   sentiment,
   informatique,
   est,
-  Vehicule,
+  vehicule,
   menu,
   email,
   lab,

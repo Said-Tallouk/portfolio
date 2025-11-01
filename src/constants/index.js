@@ -1,7 +1,7 @@
 import {
  said,
  email,
- est, TD, informatique, gmsoft, lycee,cv,sentiment,lab,Vehicule 
+ est, TD, informatique, gmsoft, lycee,cv,sentiment,lab,vehicule 
 } from "../assets";
 
 import {
@@ -768,7 +768,7 @@ export const projects = [
     title: "Vehicle Route Management",
     github: "https://github.com/Attoumidriss2001/AWS_Three_Tier_Web-_Architecture",
      link: "https://github.com/Attoumidriss2001/AWS_Three_Tier_Web-_Architecture",
-    image: Vehicule,
+    image: vehicule,
    content: "Vehicle Route Management is a system used to optimize and manage the routes taken by vehicles. It helps in improving efficiency by planning and tracking vehicle routes, ensuring timely deliveries, reducing fuel consumption, and optimizing fleet management.",
     stack: [
   
