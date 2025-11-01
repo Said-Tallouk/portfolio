@@ -94,8 +94,14 @@ const ThemeSelectionWrapper = ({ setShowThemeSelection }) => {
   const { selectTheme } = useContext(ThemeContext);
 
   const handleThemeSelect = (theme) => {
+    console.log("Theme selected:", theme); // Debug
     selectTheme(theme);
-    setTimeout(() => setShowThemeSelection(false), 500);
+    
+    // ✅ IMPORTANT: Attendre que le thème soit appliqué avant de rediriger
+    setTimeout(() => {
+      console.log("Theme in localStorage:", localStorage.getItem('theme')); // Debug
+      setShowThemeSelection(false);
+    }, 100);
   };
 
   return <ThemeSelection onThemeSelect={handleThemeSelect} />;

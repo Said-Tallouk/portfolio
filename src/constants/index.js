@@ -1,18 +1,7 @@
 import {
-  airbnb,
-  binance,
-  coinbase,
-  dropbox,
-  amideast,
-
-
-  said,
-
-  portfolio,
-  publiclab,
-
-  cdc,
- emi, est, agtemera, TD, informatique, gmsoft, supermarket, fire, lycee, ecomm
+ said,
+ email,
+ est, TD, informatique, gmsoft, lycee,cv,sentiment,lab,Vehicule 
 } from "../assets";
 
 import {
@@ -43,20 +32,8 @@ import {
   SiPostman,
   SiGit,
   SiMysql,
-  SiSolidity,
-  SiNetlify,
-  SiChartdotjs,
-  SiVite,
-  SiArduino,
-  SiWeb3Dotjs,
-  SiIpfs,
-  SiDotnet,
-  SiTwilio,
-  SiFlutter,
-  SiReplit,
-  SiFlask,
-  SiFigma,
-  SiGooglemaps, SiJava, SiDart, SiTypescript, SiAngular, SiSpring, SiDocker, SiWireshark, SiCss3,SiLaravel,
+  SiScikitlearn,
+  SiJava, SiTypescript, SiAngular, SiSpring, SiCss3,SiLaravel,
   SiCplusplus,SiPhp,SiStreamlit,SiNumpy,SiPandas,SiTensorflow,SiPytorch,SiDjango,SiFastapi,SiPlotly,SiKeras,
   SiOracle,SiMongodb,SiApachecassandra,SiRedis,SiNeo4J,SiCockroachlabs,SiJupyter,SiGooglecolab
 } from "react-icons/si";
@@ -691,33 +668,28 @@ export const projects = [
   {
     id: "project-1",
     title: "Email Detection (Spam or Not Spam)",
-    github: "",
+    github: "https://github.com/Said-Tallouk/Spam-Detection-Using-NLP-NBM/tree/main",
     link: "",
-    // image: ecomm,
+    image: email,
     content:
       "I used the Multinomial Naïve Bayes algorithm to classify messages as spam or not spam. First, I split the data into training and testing sets (80/20). Then, I transformed the messages into a count matrix using CountVectorizer and trained the classifier. After applying the same transformation to the test data, I evaluated the model’s performance using a confusion matrix and a classification report. Finally, I saved the model using joblib for future use. This approach is effective, but I could improve it by testing TF-IDF or other models like logistic regression.",
     stack: [
       {
-        id: "icon-4",
+        id: "icon-Python",
         icon: SiPython,
         name: "Sipython"
       },
-      // {
-      //   id: "icon-5",
-      //   icon: FaDAndD,
-      //   name: "Dart"
-      // },
+      {
+        id: "icon-5",
+        icon:   SiScikitlearn,
+        name: "  SiScikitlearn"
+      },
+      {
+        id: "icon-naivebayes",
+        icon:FaBrain,
+        name: "FaBrain"
+      },
 
-      // {
-      //   id: "icon-3",
-      //   icon: DiMsqlServer,
-      //   name: "MS Sql Server"
-      // },
-      // {
-      //   id: "icon-4",
-      //   icon: SiJquery,
-      //   name: "jQuery"
-      // },
 
     ],
   },
@@ -725,9 +697,9 @@ export const projects = [
   {
     id: "project-2",
     title: "Natural Language Processing for CV Analysis, Evaluation, and Adaptation to Job Offers",
-    github: "https://github.com/Attoumidriss2001/online_Shop_store_With_React",
+    github: "https://github.com/Said-Tallouk/NLP-CV-OFFRE-NER-Cosine-similarity",
     // link: "driss-portfolio.netlify.app/",
-    // image: portfolio,
+    image: cv,
     content: "I worked on Natural Language Processing (NLP) for CV analysis, evaluation, and adaptation to job offers. To transform the data into numerical form, I used Word2Vec, which allowed me to capture the semantic meaning of words. For measuring the similarity between a CV and a job offer, I applied K-Nearest Neighbors (KNN) to accurately calculate distances. Additionally, I used Named Entity Recognition (NER) to extract key skills from both CVs and job descriptions. By combining these techniques with similarity measures, I was able to determine how well a CV matched a job offer. This approach helped automate the screening process and improve job matching efficiency.",
     stack: [
       // {
@@ -753,7 +725,7 @@ export const projects = [
     title: "Sentiment Analysis ",
     github: "https://github.com/Attoumidriss2001/projet-Detection-fire",
     // link: "",
-    // image: fire,
+    image: sentiment,
     content:
       "Sentiment Analysis is a Natural Language Processing (NLP) technique used to determine the emotional tone of a text. It helps classify text as positive, negative, or neutral, and can be applied in various fields such as customer feedback analysis, social media monitoring, and brand reputation management.How It Works:Preprocessing – Cleaning the text (removing stopwords, punctuation, and special characters).Feature Extraction – Converting text into numerical form using TF-IDF, Word2Vec, or BERT embeddings.Model Training – Using classification algorithms like Naïve Bayes, Logistic Regression, LSTMs, or Transformers (BERT, GPT).Evaluation – Assessing model performance using metrics like accuracy, precision, recall, and F1-score.",
     stack: [
@@ -784,7 +756,7 @@ export const projects = [
     title: "Research Laboratory Management Application",
     github: "https://github.com/Attoumidriss2001/AWS-S3-Bucket-and-Website-Configuration/tree/main/mys3StaticWebsite",
      link: "https://github.com/Attoumidriss2001/AWS-S3-Bucket-and-Website-Configuration/tree/main/mys3StaticWebsite",
-    //image: portfolio,
+    image: lab,
    content: "I worked with Laravel to organize PhD researchers and their theses, as well as Master’s students, ensuring their integration into appropriate research teams for professional development. By leveraging Laravel’s robust framework, I structured the system to efficiently manage research projects, track progress, and facilitate collaboration. This application helps optimize team assignments, improving productivity and knowledge sharing within the research laboratory.",
     stack: [
   
@@ -796,7 +768,7 @@ export const projects = [
     title: "Vehicle Route Management",
     github: "https://github.com/Attoumidriss2001/AWS_Three_Tier_Web-_Architecture",
      link: "https://github.com/Attoumidriss2001/AWS_Three_Tier_Web-_Architecture",
-    //image: portfolio,
+    image: Vehicule,
    content: "Vehicle Route Management is a system used to optimize and manage the routes taken by vehicles. It helps in improving efficiency by planning and tracking vehicle routes, ensuring timely deliveries, reducing fuel consumption, and optimizing fleet management.",
     stack: [
   
@@ -952,24 +924,24 @@ export const socialMedia = [
   // },
 ];
 
-export const clients = [
-  {
-    id: "client-1",
-    logo: airbnb,
-  },
-  {
-    id: "client-2",
-    logo: binance,
-  },
-  {
-    id: "client-3",
-    logo: coinbase,
-  },
-  {
-    id: "client-4",
-    logo: dropbox,
-  },
-];
+// export const clients = [
+//   {
+//     id: "client-1",
+//     logo: airbnb,
+//   },
+//   {
+//     id: "client-2",
+//     logo: binance,
+//   },
+//   {
+//     id: "client-3",
+//     logo: coinbase,
+//   },
+//   {
+//     id: "client-4",
+//     logo: dropbox,
+//   },
+// ];
 
 export const aboutMe = {
   name: "SAID TALLOUK",

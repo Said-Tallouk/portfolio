@@ -1,32 +1,43 @@
+// src/components/ThemeContext.jsx
 import React, { createContext, useState, useEffect } from "react";
 
 export const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState(() => {
+    // Par défaut "dark" si rien n'est sauvegardé
+    const savedTheme = localStorage.getItem("theme");
+    console.log("Theme initialisé:", savedTheme || "dark"); // Debug
+    return savedTheme || "dark";
+  });
 
   useEffect(() => {
-    // Charger le thème sauvegardé
-    const storedTheme = localStorage.getItem("theme");
-    if (storedTheme) {
-      setTheme(storedTheme);
-      document.documentElement.classList.toggle("dark", storedTheme === "dark");
-    } else {
-      // Par défaut : dark
-      document.documentElement.classList.add("dark");
-    }
-  }, []);
+    console.log("Theme changé en:", theme); // Debug
+    
+    // Applique la classe sur le HTML principal
+    document.documentElement.classList.remove("light", "dark");
+    document.documentElement.classList.add(theme);
 
-  // Fonction pour changer le thème
-  const selectTheme = (newTheme) => {
-    setTheme(newTheme);
-    localStorage.setItem("theme", newTheme);
-    document.documentElement.classList.toggle("dark", newTheme === "dark");
+    // Sauvegarde dans localStorage
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const selectTheme = (selectedTheme) => {
+    console.log("selectTheme appelé avec:", selectedTheme); // Debug
+    setTheme(selectedTheme);
   };
 
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
+  };
+
+  // Calculer isDark pour compatibilité
+  const isDark = theme === "dark";
+
   return (
-    <ThemeContext.Provider value={{ theme, selectTheme }}>
+    <ThemeContext.Provider value={{ theme, isDark, selectTheme, toggleTheme }}>
       {children}
     </ThemeContext.Provider>
   );
 };
+``
